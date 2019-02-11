@@ -1221,4 +1221,6 @@
     <string name="file_header_provider_title">Custom image</string>
     <string name="file_header_provider" translatable="false">file</string>
 
+    <!-- XiaomiParts -->
+    <string name="XiaomiParts_title">XiaomiParts</string>	
 </resources>
