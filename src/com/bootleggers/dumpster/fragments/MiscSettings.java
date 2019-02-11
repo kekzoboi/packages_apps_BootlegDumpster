@@ -46,6 +46,8 @@ public class MiscSettings extends SettingsPreferenceFragment implements
     private static final String KEY_ASPECT_RATIO_APPS_LIST_SCROLLER = "aspect_ratio_apps_list_scroller";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
     private static final String CALL_SETTINGS_OPTIONS = "call_features";
+    private static final String KEY_DEVICE_PART = "XiaomiParts";
+    private static final String KEY_DEVICE_PART_PACKAGE_NAME = "org.lineageos.settings";        
 
     private AppMultiSelectListPreference mAspectRatioAppsSelect;
     private ScrollAppsViewPreference mAspectRatioApps;
@@ -58,6 +60,11 @@ public class MiscSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.bootleg_dumpster_misc);
 
+        // XiaomiShit
+        if (!com.bootleggers.dumpster.preferences.Utils.isPackageInstalled(getActivity(), KEY_DEVICE_PART_PACKAGE_NAME)) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_PART));
+        }
+            
         Preference DeviceExtras = findPreference(DEVICE_CATEGORY);
         if (!getResources().getBoolean(R.bool.has_device_extras)) {
             getPreferenceScreen().removePreference(DeviceExtras);
