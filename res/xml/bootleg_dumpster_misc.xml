@@ -153,4 +153,14 @@
 
     </PreferenceCategory>
 
+	<!-- Advanced Controls -->
+    	<Preference
+        	android:key="XiaomiParts"
+        	android:persistent="false"
+        	android:title="@string/XiaomiParts_title">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="org.lineageos.settings"
+            android:targetClass="org.lineageos.settings.BootCompletedReceiver"/>
+    	</Preference> 
+
 </PreferenceScreen>
